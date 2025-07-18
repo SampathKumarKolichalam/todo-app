@@ -232,11 +232,11 @@ Each request requires **Bearer Token** in headers.
 
 ### 6. Frontend UI Screens
 
-* **Login Page**
-  ![Login Page](screenshots/loginpage.PNG)
+#### Login Page
+![Login Page](screenshots/loginpage.PNG)
 
-* **Register Page**
-  ![Register Page](screenshots/registerpage.PNG)
+#### Register Page
+![Register Page](screenshots/registerpage.PNG)
 
 * **Dashboard View**
   ![Dashboard 1](screenshots/dashboard-1.PNG)
