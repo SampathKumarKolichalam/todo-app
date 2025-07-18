@@ -4,7 +4,7 @@ A **Full-Stack To-Do Application** built with **Django** (backend), **React.js**
 
 ---
 
-## 📌 Key Features
+## Key Features
 
 * **User Authentication:** JWT-based login and registration (bonus API for user signup).
 * **Task Management:** Add, update, delete tasks with title, description, due date, priority, and completion status.
@@ -20,7 +20,7 @@ A **Full-Stack To-Do Application** built with **Django** (backend), **React.js**
 
 ---
 
-## 🏗️ High-Level Architecture
+## High-Level Architecture
 
 ```
 +-------------------+        +-----------------+        +---------------------+
@@ -41,7 +41,7 @@ A **Full-Stack To-Do Application** built with **Django** (backend), **React.js**
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack Used
 
 | Layer          | Technology                                    |
 | -------------- | --------------------------------------------- |
@@ -53,7 +53,7 @@ A **Full-Stack To-Do Application** built with **Django** (backend), **React.js**
 
 ---
 
-## 🔗 API Endpoints
+## API Endpoints List
 
 | Method | Endpoint              | Purpose                   |
 | ------ | --------------------- | ------------------------- |
@@ -68,7 +68,7 @@ A **Full-Stack To-Do Application** built with **Django** (backend), **React.js**
 
 ---
 
-## ✅ Setup Instructions
+## Setup Instructions
 
 ### 1. Backend (Django)
 
@@ -90,7 +90,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-* **Configure Database in `.env`**
+* **Configure Database in `.env`**(Please Change credentials accordingly)
 
 ```
 MYSQL_DB_NAME=todo_db
@@ -134,7 +134,7 @@ npm run dev
 
 ---
 
-## 🔍 Testing APIs via Thunder Client / Postman
+## Testing APIs via Thunder Client / Postman
 
 * **Register:** POST `/api/auth/register/`
 * **Login:** POST `/api/auth/login/`
@@ -148,14 +148,14 @@ Each request requires **Bearer Token** in headers.
 
 ---
 
-## 📨 Email Reminder Logic
+## Email Reminder Logic
 
-* When a task is created/updated with a due date within **1 hour from current time**, a signal triggers an **email reminder** to the user (visible in the console in development).
-* Easily configurable for production SMTP services.
+* When a task is created/updated with a due date within **1 hour from current time**, a signal triggers an **email reminder** to the user (For now visible in the console in development).
+* Easily configurable for production SMTP services, future enhancement.
 
 ---
 
-## 🎨 UI/UX Highlights
+## UI/UX Highlights
 
 * Progress bar reflecting completed tasks.
 * Overdue tasks are visually highlighted in red.
@@ -169,12 +169,12 @@ Each request requires **Bearer Token** in headers.
   * All Tasks
   * To-Do
   * Completed
-* Sort by Due Date and Priority (bonus feature).
+* Sort by Due Date and Priority (Extra feature).
 * Fully responsive design for mobile and desktop.
 
 ---
 
-## 🏁 Deployment Guide (Optional)
+## Deployment Guide (Optional for now, Future UseCases)
 
 * Backend can be deployed on **Render / Railway**.
 * Frontend can be deployed on **Vercel**.
@@ -186,32 +186,16 @@ Each request requires **Bearer Token** in headers.
 
 ---
 
-## 📸 Suggested Screenshots for Documentation
-
-1. **Django Admin Panel:** Users, Tasks.
-2. **Thunder Client/Postman:** Authentication, CRUD, Overdue API.
-3. **Email Console Output:** Sample email reminder.
-4. **Frontend UI:** Dashboard with tasks, progress, filters, overdue highlighting.
-5. **Responsive View:** Screenshots on tablet/mobile.
-
----
-
-## 👨‍💻 Developer
+## Developer
 
 **Sampath Kumar Kolichalam**
 Project developed as part of **Bright Bridge Django Proficiency Assessment.**
 
 ---
 
-## 📝 License
+## License
 
 MIT License.
 
 ---
 
-## 🧭 How to Contribute / Clone
-
-```bash
-git clone https://github.com/youruser/todo-app.git
-cd todo-app
-```
