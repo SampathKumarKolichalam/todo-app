@@ -174,6 +174,82 @@ Each request requires **Bearer Token** in headers.
 
 ---
 
+## 📸 Project Screenshots
+
+### 1. Folder Structure
+
+* **Backend Structure**
+  ![Backend Folder Structure](screenshots/Folder%20Structure-1.PNG)
+
+* **Frontend Structure**
+  ![Frontend Folder Structure](screenshots/Folder%20Structure-2.PNG)
+
+### 2. Database Tables
+
+* **Tasks Table**
+  ![Tasks Table](screenshots/task%20list.PNG)
+
+* **Auth User Table**
+  ![Auth User Table](screenshots/drf.PNG)
+
+* **Admin Logs**
+  ![Admin Logs](screenshots/drf.PNG)
+
+### 3. Backend & Frontend Servers
+
+* **Django Backend Running**
+  ![Backend Server](screenshots/backend%20server.PNG)
+
+* **React Frontend Running**
+  ![Frontend Server](screenshots/frontend%20server.PNG)
+
+### 4. API Testing via Thunder Client / Postman
+
+* **Login API**
+  ![Login API](screenshots/Login%20\(Token%20Generation\).PNG)
+
+* **Register API**
+  ![Register API](screenshots/registerpage.PNG)
+
+* **Refresh Token API**
+  ![Refresh Token](screenshots/Refresh%20Token.PNG)
+
+* **Create Task API**
+  ![Create Task API](screenshots/Create%20Task.PNG)
+
+* **Get All Tasks API**
+  ![Get All Tasks API](screenshots/Get%20All%20Tasks.PNG)
+
+* **Update Task API**
+  ![Update Task API](screenshots/Update%20Task.PNG)
+
+* **Delete Task API**
+  ![Delete Task API](screenshots/Delete%20Task.PNG)
+
+* **Overdue Task API**
+  ![Overdue Task API](screenshots/overdue%20email-terminal.PNG)
+
+### 5. Email Reminder Console Output
+
+![Email Reminder Console](screenshots/overdue%20email-terminal.PNG)
+
+### 6. Frontend UI Screens
+
+* **Login Page**
+  ![Login Page](screenshots/loginpage.PNG)
+
+* **Register Page**
+  ![Register Page](screenshots/registerpage.PNG)
+
+* **Dashboard View**
+  ![Dashboard 1](screenshots/dashboard-1.PNG)
+  ![Dashboard 2](screenshots/dashboard-2.PNG)
+  ![Dashboard 3](screenshots/dashboard-3.PNG)
+  ![Dashboard 4](screenshots/dashboard-4.PNG)
+  ![Dashboard 5](screenshots/dashboard-5.PNG)
+
+---
+
 ## Deployment Guide (Optional for now, Future UseCases)
 
 * Backend can be deployed on **Render / Railway**.
@@ -196,82 +272,5 @@ Project developed as part of **Bright Bridge Django Proficiency Assessment.**
 ## License
 
 MIT License.
-
----
-
-## 📸 Screenshots
-
-### 1. Folder Structure
-
-* **Backend & Frontend Directory**
-  ![Folder Structure-1](screenshots/Folder%20Structure-1.PNG)
-  ![Folder Structure-2](screenshots/Folder%20Structure-2.PNG)
-
-### 2. Database Structure
-
-* **Tasks Table**
-  ![task list](screenshots/task%20list.PNG)
-
-* **Auth User Table**
-  ![user list](screenshots/user%20list.PNG)
-
-* **Admin Logs**
-  ![admin logs](screenshots/django_admin_log.PNG)
-
-### 3. Backend & Frontend Servers
-
-* **Django Backend Running**
-  ![Backend Server](screenshots/backend%20server.PNG)
-
-* **React Frontend Running**
-  ![Frontend Server](screenshots/frontend%20server.PNG)
-
-### 4. API Testing via Thunder Client / Postman
-
-* **User Registration**
-  ![Register](screenshots/registerpage.PNG)
-
-* **Login API**
-  ![Login](screenshots/loginpage.PNG)
-
-* **Token Refresh**
-  ![Refresh Token](screenshots/Refresh%20Token.PNG)
-
-* **Create Task**
-  ![Create Task](screenshots/Create%20Task.PNG)
-
-* **Get All Tasks**
-  ![Get All Tasks](screenshots/Get%20All%20Tasks.PNG)
-
-* **Update Task**
-  ![Update Task](screenshots/Update%20Task.PNG)
-
-* **Delete Task**
-  ![Delete Task](screenshots/Delete%20Task.PNG)
-
-* **Overdue Tasks API**
-  ![Overdue API](screenshots/overdue%20email-terminal.PNG)
-
-### 5. Email Reminder Console Output
-
-![Overdue Email Terminal](screenshots/overdue%20email-terminal.PNG)
-
-### 6. Frontend UI
-
-* **Dashboard Overview**
-  ![Dashboard](screenshots/dashboard-1.PNG)
-
-* **Completed Tasks Filter**
-  ![Completed Filter](screenshots/dashboard-2.PNG)
-
-* **To-Do Tasks Filter**
-  ![To-Do Filter](screenshots/dashboard-3.PNG)
-
-* **Priority, Progress & Filters**
-  ![Priority Filters](screenshots/dashboard-4.PNG)
-
-### 7. Task List (Admin Panel)
-
-![Task List Admin](screenshots/task%20list.PNG)
 
 ---
