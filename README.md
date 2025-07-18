@@ -41,7 +41,7 @@ A **Full-Stack To-Do Application** built with **Django** (backend), **React.js**
 
 ---
 
-##  Tech Stack Used
+## Tech Stack Used
 
 | Layer          | Technology                                    |
 | -------------- | --------------------------------------------- |
@@ -90,7 +90,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-* **Configure Database in `.env`**(Please Change credentials accordingly)
+* **Configure Database in `.env`** (Please Change credentials accordingly)
 
 ```
 MYSQL_DB_NAME=todo_db
@@ -199,3 +199,79 @@ MIT License.
 
 ---
 
+## 📸 Screenshots
+
+### 1. Folder Structure
+
+* **Backend & Frontend Directory**
+  ![Folder Structure-1](screenshots/Folder%20Structure-1.PNG)
+  ![Folder Structure-2](screenshots/Folder%20Structure-2.PNG)
+
+### 2. Database Structure
+
+* **Tasks Table**
+  ![task list](screenshots/task%20list.PNG)
+
+* **Auth User Table**
+  ![user list](screenshots/user%20list.PNG)
+
+* **Admin Logs**
+  ![admin logs](screenshots/django_admin_log.PNG)
+
+### 3. Backend & Frontend Servers
+
+* **Django Backend Running**
+  ![Backend Server](screenshots/backend%20server.PNG)
+
+* **React Frontend Running**
+  ![Frontend Server](screenshots/frontend%20server.PNG)
+
+### 4. API Testing via Thunder Client / Postman
+
+* **User Registration**
+  ![Register](screenshots/registerpage.PNG)
+
+* **Login API**
+  ![Login](screenshots/loginpage.PNG)
+
+* **Token Refresh**
+  ![Refresh Token](screenshots/Refresh%20Token.PNG)
+
+* **Create Task**
+  ![Create Task](screenshots/Create%20Task.PNG)
+
+* **Get All Tasks**
+  ![Get All Tasks](screenshots/Get%20All%20Tasks.PNG)
+
+* **Update Task**
+  ![Update Task](screenshots/Update%20Task.PNG)
+
+* **Delete Task**
+  ![Delete Task](screenshots/Delete%20Task.PNG)
+
+* **Overdue Tasks API**
+  ![Overdue API](screenshots/overdue%20email-terminal.PNG)
+
+### 5. Email Reminder Console Output
+
+![Overdue Email Terminal](screenshots/overdue%20email-terminal.PNG)
+
+### 6. Frontend UI
+
+* **Dashboard Overview**
+  ![Dashboard](screenshots/dashboard-1.PNG)
+
+* **Completed Tasks Filter**
+  ![Completed Filter](screenshots/dashboard-2.PNG)
+
+* **To-Do Tasks Filter**
+  ![To-Do Filter](screenshots/dashboard-3.PNG)
+
+* **Priority, Progress & Filters**
+  ![Priority Filters](screenshots/dashboard-4.PNG)
+
+### 7. Task List (Admin Panel)
+
+![Task List Admin](screenshots/task%20list.PNG)
+
+---
