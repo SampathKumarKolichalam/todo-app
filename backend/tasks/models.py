@@ -11,7 +11,7 @@ class Task(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tasks')
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-    due_date = models.DateTimeField()
+    due_date = models.DateTimeField(null=True, blank=True)
     is_complete = models.BooleanField(default=False)
     priority = models.CharField(max_length=5, choices=PRIORITY_CHOICES, default='MED')
     created_at = models.DateTimeField(auto_now_add=True)
