@@ -4,9 +4,8 @@ from .serializers import TaskSerializer
 
 from django.contrib.auth.models import User
 from rest_framework import serializers, generics
-from rest_framework import permissions as drf_permissions  # avoid clash
+from rest_framework import permissions as drf_permissions  
 
-# --- Overdue Tasks API ---
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -18,7 +17,6 @@ class OverdueTaskList(APIView):
         serializer = TaskSerializer(overdue_tasks, many=True)
         return Response(serializer.data)
 
-# --- Your existing views ---
 
 class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer

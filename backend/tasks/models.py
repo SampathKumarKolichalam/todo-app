@@ -21,7 +21,7 @@ class Task(models.Model):
     priority = models.CharField(max_length=5, choices=PRIORITY_CHOICES, default='MED')
     created_at = models.DateTimeField(auto_now_add=True)
 
-    objects = TaskQuerySet.as_manager()  # <--- Custom queryset manager
+    objects = TaskQuerySet.as_manager()  
 
     def __str__(self):
         return f"{self.title} ({self.user.username})"

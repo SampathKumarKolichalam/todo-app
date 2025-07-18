@@ -3,11 +3,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 from datetime import timedelta
 
-# Load environment variables from .env file
 load_dotenv()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-dev-secret-key')
 DEBUG = True
 ALLOWED_HOSTS = []
@@ -25,7 +22,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',  # ADD AT THE TOP
+    'corsheaders.middleware.CorsMiddleware',  
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -85,7 +82,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'America/Denver'  # For MST / Utah
+TIME_ZONE = 'America/Denver'  
 USE_I18N = True
 USE_TZ = True
 
@@ -93,7 +90,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# DRF & JWT settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -104,16 +100,14 @@ REST_FRAMEWORK = {
     )
 }
 
-# CORS settings (for local dev; restrict in production!)
 CORS_ALLOW_ALL_ORIGINS = True
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),    # 1 hour access token
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),       # 7 days refresh token
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),   
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),       
     "ROTATE_REFRESH_TOKENS": False,
     "BLACKLIST_AFTER_ROTATION": False,
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-#EMAIL_HOST_USER = "noreply@example.com"

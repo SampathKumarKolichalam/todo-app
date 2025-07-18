@@ -13,14 +13,13 @@ export default function TaskInput({ onAdd }) {
   const [priority, setPriority] = useState("MED");
   const [error, setError] = useState("");
 
-  // Get today in yyyy-mm-dd for min date
+
   const todayStr = new Date().toISOString().split("T")[0];
 
   const handleSubmit = e => {
     e.preventDefault();
     if (!title.trim()) return setError("Task title required");
     if (due) {
-      // Only allow dates today or in the future
       const picked = new Date(due);
       const today = new Date(todayStr);
       if (picked < today) return setError("Due date cannot be in the past");

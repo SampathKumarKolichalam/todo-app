@@ -10,7 +10,7 @@ export default function DashboardPage() {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("all");
   const [loading, setLoading] = useState(true);
-  const [sortOption, setSortOption] = useState("date");  // new state for sorting
+  const [sortOption, setSortOption] = useState("date");  
 
   const token = localStorage.getItem("access");
 
@@ -45,14 +45,12 @@ export default function DashboardPage() {
       .then(() => setTasks(tasks.filter(t => t.id !== id)));
   };
 
-  // Filtering logic
   const filteredTasks = tasks.filter(t =>
     filter === "all" ? true :
       filter === "todo" ? !t.is_complete :
         t.is_complete
   );
 
-  // Sorting logic based on selected option
   const sortedTasks = [...filteredTasks].sort((a, b) => {
     if (sortOption === "priority") {
       const priorityOrder = { HIGH: 1, MED: 2, LOW: 3 };
@@ -83,7 +81,6 @@ export default function DashboardPage() {
       <ProgressBar completed={completed} total={tasks.length} />
       <FilterBar filter={filter} setFilter={setFilter} />
 
-      {/* Sorting Option Dropdown */}
       <div style={{ margin: "12px 0" }}>
         <label style={{ marginRight: 8 }}>Sort by: </label>
         <select

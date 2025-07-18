@@ -6,7 +6,7 @@ router = DefaultRouter()
 router.register(r'', TaskViewSet, basename='task')
 
 urlpatterns = [
-    path('overdue/', OverdueTaskList.as_view(), name='overdue-tasks'),  # <-- add this line
+    path('overdue/', OverdueTaskList.as_view(), name='overdue-tasks'),  
 ]
 
 urlpatterns += router.urls
