@@ -178,22 +178,22 @@ Each request requires **Bearer Token** in headers.
 
 ### 1. Folder Structure
 
-* **Backend Structure**
   ![Backend Folder Structure](screenshots/Folder%20Structure-1.PNG)
 
-* **Frontend Structure**
   ![Frontend Folder Structure](screenshots/Folder%20Structure-2.PNG)
 
-### 2. Database Tables
+### 2. MySQL Database Tables
+
+* **DataBase Schema**
+ ![DataBase Schema](screenshots/db-1.PNG)
 
 * **Tasks Table**
-  ![Tasks Table](screenshots/task%20list.PNG)
+  ![Tasks Table](screenshots/db-6.PNG)
 
 * **Auth User Table**
-  ![Auth User Table](screenshots/drf.PNG)
+  ![Auth User Table](screenshots/db-2.PNG)
 
-* **Admin Logs**
-  ![Admin Logs](screenshots/drf.PNG)
+
 
 ### 3. Backend & Frontend Servers
 
@@ -209,7 +209,7 @@ Each request requires **Bearer Token** in headers.
   ![Login API](screenshots/Login%20\(Token%20Generation\).PNG)
 
 * **Register API**
-  ![Register API](screenshots/registerpage.PNG)
+  ![Register API](screenshots/register%20user.PNG)
 
 * **Refresh Token API**
   ![Refresh Token](screenshots/Refresh%20Token.PNG)
@@ -226,12 +226,9 @@ Each request requires **Bearer Token** in headers.
 * **Delete Task API**
   ![Delete Task API](screenshots/Delete%20Task.PNG)
 
-* **Overdue Task API**
-  ![Overdue Task API](screenshots/overdue%20email-terminal.PNG)
+### 5. Over Due Email Reminder Console Output
 
-### 5. Email Reminder Console Output
-
-![Email Reminder Console](screenshots/overdue%20email-terminal.PNG)
+![Over due Email Reminder Console](screenshots/overdue%20email-terminal.PNG)
 
 ### 6. Frontend UI Screens
 
