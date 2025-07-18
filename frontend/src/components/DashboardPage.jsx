@@ -1,21 +1,19 @@
-// src/components/DashboardPage.jsx (or wherever your dashboard is)
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TaskInput from "./TaskInput";
 import FilterBar from "./FilterBar";
 import ProgressBar from "./ProgressBar";
 import TaskList from "./TaskList";
-import DashboardHeader from "./DashboardHeader"; // <-- Add this line
+import DashboardHeader from "./DashboardHeader";
 
 export default function DashboardPage() {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("all");
   const [loading, setLoading] = useState(true);
+  const [sortOption, setSortOption] = useState("date");  // new state for sorting
 
-  // Auth token (JWT)
-  const token = localStorage.getItem("access"); // "access" is correct
+  const token = localStorage.getItem("access");
 
-  // Fetch tasks
   useEffect(() => {
     setLoading(true);
     axios.get("/api/tasks/", {
@@ -26,7 +24,6 @@ export default function DashboardPage() {
       .finally(() => setLoading(false));
   }, [token]);
 
-  // Add task
   const addTask = (data) => {
     axios.post("/api/tasks/", data, {
       headers: { Authorization: `Bearer ${token}` }
@@ -34,7 +31,6 @@ export default function DashboardPage() {
       .then(res => setTasks([...tasks, res.data]));
   };
 
-  // Update (toggle) task
   const updateTask = (id, data) => {
     axios.patch(`/api/tasks/${id}/`, data, {
       headers: { Authorization: `Bearer ${token}` }
@@ -42,7 +38,6 @@ export default function DashboardPage() {
       .then(res => setTasks(tasks.map(t => t.id === id ? res.data : t)));
   };
 
-  // Delete task
   const deleteTask = (id) => {
     axios.delete(`/api/tasks/${id}/`, {
       headers: { Authorization: `Bearer ${token}` }
@@ -50,21 +45,32 @@ export default function DashboardPage() {
       .then(() => setTasks(tasks.filter(t => t.id !== id)));
   };
 
-  // Filtered tasks
+  // Filtering logic
   const filteredTasks = tasks.filter(t =>
     filter === "all" ? true :
       filter === "todo" ? !t.is_complete :
         t.is_complete
   );
 
-  // Progress counts
+  // Sorting logic based on selected option
+  const sortedTasks = [...filteredTasks].sort((a, b) => {
+    if (sortOption === "priority") {
+      const priorityOrder = { HIGH: 1, MED: 2, LOW: 3 };
+      return priorityOrder[a.priority] - priorityOrder[b.priority];
+    } else if (sortOption === "date") {
+      return new Date(a.due_date) - new Date(b.due_date);
+    }
+    return 0;
+  });
+
   const completed = tasks.filter(t => t.is_complete).length;
 
   return (
     <div className="container"
       style={{
-        maxWidth: 600,
-        margin: "40px auto",
+        maxWidth: "90%",
+        width: "100%",
+        margin: "20px auto",
         color: "#fff",
         background: "#1c1c24",
         minHeight: "90vh",
@@ -72,13 +78,35 @@ export default function DashboardPage() {
         borderRadius: 18,
         boxShadow: "0 6px 28px #0003"
       }}>
-      <DashboardHeader /> {/* <-- Add this line at the top */}
+      <DashboardHeader />
       <TaskInput onAdd={addTask} />
       <ProgressBar completed={completed} total={tasks.length} />
       <FilterBar filter={filter} setFilter={setFilter} />
+
+      {/* Sorting Option Dropdown */}
+      <div style={{ margin: "12px 0" }}>
+        <label style={{ marginRight: 8 }}>Sort by: </label>
+        <select
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+          style={{
+            padding: "6px 12px",
+            borderRadius: 6,
+            border: "none",
+            background: "#333",
+            color: "#fff",
+            fontWeight: "bold",
+            cursor: "pointer"
+          }}
+        >
+          <option value="date">Due Date</option>
+          <option value="priority">Priority</option>
+        </select>
+      </div>
+
       {loading ? <div>Loading...</div> :
         <TaskList
-          tasks={filteredTasks}
+          tasks={sortedTasks}
           onToggle={task => updateTask(task.id, { is_complete: !task.is_complete })}
           onDelete={deleteTask}
         />}

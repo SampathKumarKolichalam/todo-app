@@ -85,7 +85,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Denver'  # For MST / Utah
 USE_I18N = True
 USE_TZ = True
 
@@ -114,3 +114,6 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": False,
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+#EMAIL_HOST_USER = "noreply@example.com"

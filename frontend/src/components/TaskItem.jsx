@@ -1,10 +1,8 @@
 import React from "react";
 
 export default function TaskItem({ task, onToggle, onDelete }) {
-  // Format due date as YYYY-MM-DD (or blank if missing)
   const due = task.due_date ? new Date(task.due_date).toLocaleDateString() : "";
 
-  // Color for priority
   const getPriorityColor = (priority) => {
     switch (priority) {
       case "HIGH": return "#f44336";
@@ -14,16 +12,25 @@ export default function TaskItem({ task, onToggle, onDelete }) {
     }
   };
 
+  const isOverdue = task.due_date && new Date(task.due_date) < new Date() && !task.is_complete;
+
   return (
-    <li style={{
-      display: "flex",
-      alignItems: "center",
-      background: "#232323",
-      borderRadius: 12,
-      margin: "0.5rem 0",
-      padding: "14px 18px",
-      boxShadow: "0 2px 8px #0001"
-    }}>
+    <li
+      style={{
+        display: "flex",
+        alignItems: "center",
+        background: isOverdue ? "#8B0000" : "#232323",
+        borderRadius: 12,
+        margin: "0.5rem 0",
+        padding: "14px 18px",
+        boxShadow: "0 2px 8px #0001",
+        color: isOverdue ? "#fff" : "inherit",
+        transition: "background 0.3s, transform 0.3s",
+        cursor: "pointer"
+      }}
+      onMouseEnter={e => e.currentTarget.style.transform = "scale(1.02)"}
+      onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
+    >
       <input
         type="checkbox"
         checked={task.is_complete}
@@ -35,7 +42,9 @@ export default function TaskItem({ task, onToggle, onDelete }) {
           fontSize: "1.1rem",
           fontWeight: "bold",
           textDecoration: task.is_complete ? "line-through" : "none"
-        }}>{task.title}</div>
+        }}>
+          {task.title}
+        </div>
         {task.description && (
           <div style={{ color: "#bbb", fontSize: 15, marginTop: 2 }}>{task.description}</div>
         )}
@@ -63,7 +72,7 @@ export default function TaskItem({ task, onToggle, onDelete }) {
           borderRadius: 7,
           padding: "7px 13px",
           fontWeight: "bold",
-          cursor: "pointer",
+          cursor: "pointer"
         }}
         title="Delete"
       >
