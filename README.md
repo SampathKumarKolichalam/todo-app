@@ -261,8 +261,7 @@ Each request requires **Bearer Token** in headers.
 
 ## Developer
 
-**Sampath Kumar Kolichalam**
-Project developed as part of **Bright Bridge Django Proficiency Assessment.**
+**Sampath Kumar Kolichalam-Full Stack Developer**
 
 ---
 
